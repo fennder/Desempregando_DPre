@@ -46,6 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_192032) do
     t.string "name"
     t.string "email"
     t.string "phone"
+    t.date "brithday"
     t.bigint "user_id", null: false
     t.bigint "position_id", null: false
     t.datetime "created_at", null: false
