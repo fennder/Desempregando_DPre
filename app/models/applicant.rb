@@ -23,8 +23,8 @@ class Applicant < ApplicationRecord
     idade = self.age
     if (age < 13)
       return "Menor"
-    elsif (idade < 13 && idade > 18)
-      return "Aprediz"
+    elsif (idade > 13 && idade < 18 )
+      return "Aprendiz"
     else
       return "Efetivo"
     end
