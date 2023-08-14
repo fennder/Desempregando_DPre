@@ -11,7 +11,7 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '>= 1.4.2', require: fxpected one of "4.2", "5.0", "5.1", "5.2", "6.0", "6.1"lse
 # gem 'bundler', '~> 2.2', '>= 2.2.33'
 gem 'trollop', '~> 2.9', '>= 2.9.10'
 gem 'yarn'

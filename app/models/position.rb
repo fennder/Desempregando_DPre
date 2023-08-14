@@ -20,4 +20,5 @@ class Position < ApplicationRecord
     ["career", "city", "company_id", "contract", "created_at", "description", "id", "name", "publish", "remote", "slug", "state", "summary", "updated_at"]
   end
   
+  
 end

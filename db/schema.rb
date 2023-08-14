@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_06_192032) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_08_205111) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -96,6 +96,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_192032) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "skill_applicants", force: :cascade do |t|
+    t.bigint "skill_id", null: false
+    t.bigint "applicant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["applicant_id"], name: "index_skill_applicants_on_applicant_id"
+    t.index ["skill_id"], name: "index_skill_applicants_on_skill_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_positions", force: :cascade do |t|
+    t.bigint "users_id", null: false
+    t.bigint "positions_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["positions_id"], name: "index_user_positions_on_positions_id"
+    t.index ["users_id"], name: "index_user_positions_on_users_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -116,4 +141,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_192032) do
   add_foreign_key "positions", "companies"
   add_foreign_key "profile_users", "profiles"
   add_foreign_key "profile_users", "users"
+  add_foreign_key "skill_applicants", "applicants"
+  add_foreign_key "skill_applicants", "skills"
+  add_foreign_key "user_positions", "positions", column: "positions_id"
+  add_foreign_key "user_positions", "users", column: "users_id"
 end
