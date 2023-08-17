@@ -21,8 +21,8 @@ function derrubar_containers() {
 
 #reinicia a aplicação e mostra os logs do app
 function dua(){
-    docker-compose down && docker-compose up -d
-    docker attach $APP_NAME'_app'
+    sudo docker-compose down && sudo docker-compose up -d
+    sudo docker attach $APP_NAME'_app'
 }
 
 # Função para instalar Docker e Docker Compose
@@ -104,7 +104,7 @@ function app() {
         app_config_devise_token_auth
         app rails db:migrate
     else
-        docker-compose run app "$@"
+        sudo docker-compose run app "$@"
     fi
 }
 
