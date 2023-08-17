@@ -27,5 +27,4 @@ class Position < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     ["career", "city", "company_id", "contract", "created_at", "description", "id", "name", "publish", "remote", "slug", "state", "summary", "updated_at"]
   end
-
 end
