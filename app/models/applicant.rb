@@ -22,14 +22,12 @@ def verifica_idade
   idade = self.calculate_age
   if (idade <=13)
     return "menor"
-  elsif(idade > 13 && idade < 18) 
+  elsif(idade > 13 && idade < 18)
     return "aprendiz"
   else
     return "efetivo"
-  end   
+  end
 end
 
-def has_experience
-    
-end
 
+end
